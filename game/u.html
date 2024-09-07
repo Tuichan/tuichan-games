@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calling JavaScript functions from pyxel</title>
+    <style>
+        #msg{
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            border: solid 1px #eeeeee;
+            width: 10rem;
+            color: #aaa;
+            background: black
+        }
+    </style>
+
+    <script>
+    var jsval = "Good!"
+    let cnt = 0
+    function myfunc(aStr){
+        document.getElementById("msg").innerText = "I am JavaScript " + aStr;
+        return cnt++;
+    }
+    </script>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/gh/kitao/pyxel/wasm/pyxel.js"></script>
+    <pyxel-run  root="." name="functest.py"></pyxel-run>
+
+
+    <div id="msg">This is a html.</div>
+</body>
+</html>
