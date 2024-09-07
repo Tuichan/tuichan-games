@@ -1,16 +1,11 @@
 import pyxel
 
-class App:
-    def __init__(self):
-        pyxel.init(160, 120)
-        self.x = 0
-        pyxel.run(self.update, self.draw)
+pyxel.init(128, 128)
 
-    def update(self):
-        self.x = (self.x + 1) % pyxel.width
+# ビットマップフォントの読み込み
+font = pyxel.Font("umplus_j10r.bdf")
 
-    def draw(self):
-        pyxel.cls(0)
-        pyxel.rect(self.x, 0, 8, 8, 9)
+# フォントを指定してテキスト表示
+pyxel.text(10,10,"日本語の表示",7,font)
 
-App()
+pyxel.show()
